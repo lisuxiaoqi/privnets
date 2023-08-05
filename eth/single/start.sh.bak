@@ -1,0 +1,12 @@
+geth --identity single --rpc.enabledeprecatedpersonal  --rpc.allow-unprotected-txs  --nodiscover \
+--http --http.addr "0.0.0.0" \
+--http.corsdomain "*" --nat "any" --http.api eth,web3,personal,net \
+--datadir /Users/lc/nets/eth/single/data \
+--networkid 9 --mine --miner.threads 1 \
+--miner.etherbase 0xac0c996558b8e6c7a241d0c965e6f8328482044e \
+--unlock 0xac0c996558b8e6c7a241d0c965e6f8328482044e --allow-insecure-unlock --password pwd \
+--ws --ws.addr "0.0.0.0" --ws.port 8546 \
+--gcmode archive \
+--ws.origins "*" --http.vhosts=* \
+--miner.gaslimit=11000000 \
+console 2>eth.log
