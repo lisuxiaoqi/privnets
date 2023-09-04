@@ -16,12 +16,5 @@ NODELOG=$LOGPATH/node.log
 echo "Start gated"
 nohup gated start > $NODELOG  2>&1 & 
 
-sleep 1
-RPCLOG=$LOGPATH/rpc.log
-echo "Start evm rest server"
-cp ~/.gated/api.token ~/.gatecli
-nohup gatecli evm rest-server --gm-websocket-port http://127.0.0.1:8081 --chain-id  gate-66 --laddr tcp://0.0.0.0:8545 --rpc-api web3,eth,personal,net,debug > $RPCLOG 2>&1 &
-
 echo "started"
 ps -ef|grep -w -e "[g]ated"
-ps -ef|grep -e "[e]vm rest-server"

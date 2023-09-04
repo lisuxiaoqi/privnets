@@ -1,0 +1,13 @@
+echo "\n[Init test environment]"
+cd txtest
+
+# choose network configured in hardhat
+export NETWORK=gtlocal
+
+# test eth transfer
+echo "\n[Test transfer from eth account to eth account]"
+bash eth_transfer.sh
+
+# test eip1559
+echo "\n[Test EIP1559]"
+bash eip1559.sh
