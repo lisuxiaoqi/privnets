@@ -2,7 +2,7 @@
 set -eo pipefail
 
 # check node
-./stop.sh
+./stop
 
 # create log folder
 LOGPATH=log
