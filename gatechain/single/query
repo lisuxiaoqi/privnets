@@ -1,0 +1,13 @@
+# test query receipt
+echo "\n[Test Query old Tx]"
+curl -s -X POST  -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x18dfe3b38c3319fba19c5d1176729a6cdbea26463f473f0a54a3e0d122c3009c"],"id":1}' "localhost:8545"|jq
+
+echo "\n[Test Query old Receipt]"
+curl -s -X POST  -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0x18dfe3b38c3319fba19c5d1176729a6cdbea26463f473f0a54a3e0d122c3009c"],"id":1}' "localhost:8545"|jq
+
+# test query receipt
+echo "\n[Test Query new legacy Tx]"
+curl -s -X POST  -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x9dde95a4eac944ca6dc15dd06388de30c025d75877f22747c0ccc83c0eda985f"],"id":1}' "localhost:8545"|jq
+
+echo "\n[Test Query new legacy  Receipt]"
+curl -s -X POST  -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0x9dde95a4eac944ca6dc15dd06388de30c025d75877f22747c0ccc83c0eda985f"],"id":1}' "localhost:8545"|jq

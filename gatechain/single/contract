@@ -1,0 +1,10 @@
+echo "\n[Init test environment]"
+cd txtest
+(cd hardhat;npm install)
+
+# choose network configured in hardhat
+export NETWORK=gtlocal
+
+# test contract deployment and call
+echo "\n[Test contract deployment and call]"
+bash contract.sh

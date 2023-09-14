@@ -23,7 +23,8 @@ async function transfer(){
     const transactionReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
     const transactionHash = transactionReceipt.transactionHash;
 
-    await web3.eth.getTransactionReceipt(transactionHash);
+    const txreceipt = await web3.eth.getTransactionReceipt(transactionHash);
+    console.log(txreceipt)
 
     b_from =  web3.utils.fromWei(await web3.eth.getBalance(FROM));
     b_to =  web3.utils.fromWei(await web3.eth.getBalance(TO));
